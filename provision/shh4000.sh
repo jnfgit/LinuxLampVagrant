@@ -1,0 +1,1 @@
+sudo echo "Port 4000" >> /etc/ssh/sshd_config

@@ -28,8 +28,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         datos.vm.box ="debian-8.1-lxc"
         datos.vm.hostname = "datos"
         datos.vm.network "private_network", ip: "10.0.0.211"
-        #datos.vm.network "forwarded_port", guest:80, host:9999
-        #datos.vm.provision "shell", path: "provision/installMySQL.sh"
+        datos.vm.provision "shell", path: "provision/installMySQL.sh"
         datos.vm.provision "shell", path: "provision/dnsConfigurationDatos.sh"
         datos.vm.provision "shell", path: "provision/configKey.sh"
         datos.vm.provision "shell", path: "provision/userOperadorSudoers.sh"

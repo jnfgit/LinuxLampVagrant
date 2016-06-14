@@ -17,6 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         server.vm.provision "shell", path: "provision/configKey.sh"
         server.vm.provision "shell", path: "provision/userOperadorSudoers.sh"
         server.vm.provision "shell", path: "provision/shh4000.sh"
+        server.vm.provision "shell", path: "provision/installWordPress.sh"
         server.vm.provider"virtualbox" do |vbox|
             vbox.memory = 512
             vbox.cpus = 1
@@ -33,6 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         datos.vm.provision "shell", path: "provision/configKey.sh"
         datos.vm.provision "shell", path: "provision/userOperadorSudoers.sh"
         datos.vm.provision "shell", path: "provision/shh4000.sh"
+        datos.vm.provision "shell", path: "provision/dumpRestore.sh"
         datos.vm.provider"virtualbox" do |vbox|
             vbox.memory = 256
             vbox.cpus = 1
